@@ -89,7 +89,7 @@ final_df.printSchema()
 final_df.select("scientificName", "individualCount", "occurrenceStatus", "conservation_priority").show(10)
 
 # Save the filtered DataFrame to a new csv file
-output_path_csv = "s3://projectdatafile/script/final_data.csv"
+output_path_csv = "s3://filtereddatafile/final_data.csv"
 final_df.coalesce(1).write.mode("overwrite").csv(output_path_csv, header=True)
 
 # If part of an AWS Glue Job, commit the job

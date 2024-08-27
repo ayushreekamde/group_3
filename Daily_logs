@@ -4,8 +4,8 @@ UPLOADED dataset zipfile into s3 bucket.
 Day_2
 - facing problems to get dataset zipfile in the HDFS local
   Error - out of storage
-- due to dataset file size upto 137 gb so not abe to upload directly extrcted file direclty in the s3 bucket
-- tried to get dataset file directle from cloud to cloud using wget it s also not working (out of storage error in local)
+- due to dataset file size upto 137 gb so not able to upload directly extrcted file direclty in the s3 bucket
+- tried to get dataset file directly from cloud to cloud using wget it s also not working (out of storage error in local)
 
 Day_3
 - uploaded both csv and parquet file of the Dataset to s3 bucket
@@ -46,4 +46,9 @@ Day_9
 - relevant columns taken, columns with very high null value percent removed already
 - other columns having null values, filled with 0 or NA using fillna()
 - created the target variables and added it to dataframe
+
+Day_10
+- we have connected athena & power bi through ODBC driver.
+- according to Model & filtered data we have created insights from visualization tool power bi.
+- we have created dashboard in power bi for important insights.
 

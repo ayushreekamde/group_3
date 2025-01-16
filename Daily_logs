@@ -4,8 +4,51 @@ UPLOADED dataset zipfile into s3 bucket.
 Day_2
 - facing problems to get dataset zipfile in the HDFS local
   Error - out of storage
-- due to dataset file size upto 137 gb so not abe to upload directly extrcted file direclty in the s3 bucket
-- tried to get dataset file directle from cloud to cloud using wget it s also not working (out of storage error in local)
+- due to dataset file size upto 137 gb so not able to upload directly extrcted file direclty in the s3 bucket
+- tried to get dataset file directly from cloud to cloud using wget it s also not working (out of storage error in local)
 
 Day_3
+- uploaded both csv and parquet file of the Dataset to s3 bucket
+- made bucket publicly accessible to all the group members
+- unzipped the 11.4 GB csv zip file on local disk having enough space
+- split the 137 GB csv file into 109 separate files using split_script.py
+- uploaded the split files to s3 bucket
+
+Day_4
+- problems still exist with uploading the s3 objects to hdfs due to limited 
+	disk storage available on emr cluster
+- opted to work on the parquet file instead of 18 GB containing the same schema
+
+Day_5
+- after careful considerations, extracted schema from parquet file using pyspark 
+- also did the same for automation using AWS Glue and Athena
+- dataset contains 226 columns and 1 Cr+ rows
+- opted for a pyspark-oriented approach
+
+Day_6
+- read the dataset carefully and the data manual given
+- considered only a small sampled data of just 21 columns and 40k rows
+- refined the project architecture utilising a more efficient ETL pipeline
+
+Day_7
+- filtered the parquet data as per Indian coastline constraints
+- filtered and sampled the data and exported it to s3 bucket using pyspark
+- this was all done with the help of a pyspark script to subsample and filter data
+- same script to be used for further automation
+
+Day_8
+- utilising AWS Glue to remove columns with very high null-value percentage
+- same thing was achieved using pyspark on AWS EMR JupyterHub
+- Moved on to EDA on jupyter hub using pyspark engine
+
+Day_9
+- basic EDA performed
+- relevant columns taken, columns with very high null value percent removed already
+- other columns having null values, filled with 0 or NA using fillna()
+- created the target variables and added it to dataframe
+
+Day_10
+- we have connected athena & power bi through ODBC driver.
+- according to Model & filtered data we have created insights from visualization tool power bi.
+- we have created dashboard in power bi for important insights.
 
